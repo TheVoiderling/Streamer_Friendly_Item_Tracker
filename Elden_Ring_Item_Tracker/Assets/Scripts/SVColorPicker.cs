@@ -14,6 +14,7 @@ public class SVColorPicker : MonoBehaviour, IPointerClickHandler, IDragHandler
     [SerializeField] private RectTransform _rectTransform, _pickerTransform;
     [SerializeField] private Image _changeThisColor;
     [SerializeField] private TMP_InputField _hexField;
+    [SerializeField] private Slider _hueSlider;
 
     private void Start()
     {
@@ -23,13 +24,37 @@ public class SVColorPicker : MonoBehaviour, IPointerClickHandler, IDragHandler
         output = LoadColor();
         _changeThisColor.color = output;
         UpdateHexcodeText();
+        string tempHex = _hexField.text;
+        UpdateViaHexcode();
+        _hexField.text = tempHex;
+        UpdateViaHexcode();
     }
 
     public void UpdateViaHexcode()
     {
         Color tempColor;
         ColorUtility.TryParseHtmlString("#" + _hexField.text, out tempColor);
+        string tempHex = _hexField.text;
         output = tempColor;
+        Color.RGBToHSV(tempColor, out float H, out float S, out float V);
+        Debug.Log(H + ", " + S + ", " + V);
+        _changeThisColor.color = output;
+        SaveColor(output);
+        _pickerTransform.localPosition = new Vector3((S - 0.5f) * _rectTransform.sizeDelta.y, (V - 0.5f) * _rectTransform.sizeDelta.x);
+        _hueSlider.value = H;
+        _changeThisColor.color = output;
+        SaveColor(output);
+
+        //
+
+        ColorUtility.TryParseHtmlString("#" + tempHex, out tempColor);
+        output = tempColor;
+        Color.RGBToHSV(tempColor, out H, out S, out V);
+        Debug.Log(H + ", " + S + ", " + V);
+        _changeThisColor.color = output;
+        SaveColor(output);
+        _pickerTransform.localPosition = new Vector3((S - 0.5f) * _rectTransform.sizeDelta.x, (V - 0.5f) * _rectTransform.sizeDelta.y);
+        _hueSlider.value = H;
         _changeThisColor.color = output;
         SaveColor(output);
     }

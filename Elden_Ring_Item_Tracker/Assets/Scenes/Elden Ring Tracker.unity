@@ -6378,6 +6378,7 @@ MonoBehaviour:
   _pickerTransform: {fileID: 0}
   _changeThisColor: {fileID: 1278425768}
   _hexField: {fileID: 646541185}
+  _hueSlider: {fileID: 256159794}
 --- !u!1 &864554407
 GameObject:
   m_ObjectHideFlags: 0

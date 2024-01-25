@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TOTK Tracker.unity
     guid: 8bf9cc46e8b5bf44cb6380f5960633d3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Elden Ring Tracker.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
