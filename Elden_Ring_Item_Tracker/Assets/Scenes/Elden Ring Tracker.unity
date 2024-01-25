@@ -5135,6 +5135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fbb3a48e03269489cd59ee910aaca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CONSTANT_WINDOW_TITLE_FROM_GAME: Elden Ring Key Item Tracker
   toggle: {fileID: 2036941549}
 --- !u!4 &660464708
 Transform:
@@ -7618,6 +7619,7 @@ MonoBehaviour:
   - {fileID: 1180371764}
   - {fileID: 1973164140}
   - {fileID: 1255847236}
+  _toggleGroupIndex: 7
 --- !u!1 &1064116354
 GameObject:
   m_ObjectHideFlags: 0
@@ -10832,6 +10834,11 @@ MonoBehaviour:
   _allText: {fileID: 1057430392}
   _runeText: {fileID: 2073659030}
   _noText: {fileID: 517558721}
+  _checkRunes: 1
+  _checkKey: 1
+  _checkMedalion: 1
+  _checkItem: 1
+  _checkMulti: 1
 --- !u!4 &1439702550
 Transform:
   m_ObjectHideFlags: 0

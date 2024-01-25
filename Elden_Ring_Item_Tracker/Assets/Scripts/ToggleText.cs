@@ -8,6 +8,7 @@ public class ToggleText : MonoBehaviour
     [SerializeField] private Toggle _toggleAll, _toggleRunes, _toggleNone;
     [SerializeField] private Toggle[] _toggles;
     [SerializeField] private GameObject[] _labels;
+    [SerializeField] private int _toggleGroupIndex;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class ToggleText : MonoBehaviour
             {
                 if (!item.isOn)
                 {
-                    if(index < 7)
+                    if(index < _toggleGroupIndex)
                     {
                         _labels[index].SetActive(true);
                     }
@@ -64,7 +65,7 @@ public class ToggleText : MonoBehaviour
         }
         if (_toggleRunes.isOn)
         {
-            for(int i = 0; i < 7; i++)
+            for(int i = 0; i < _toggleGroupIndex; i++)
             {
                 if(label == _labels[i])
                 {

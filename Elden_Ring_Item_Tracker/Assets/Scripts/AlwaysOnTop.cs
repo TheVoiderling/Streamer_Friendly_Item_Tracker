@@ -110,7 +110,7 @@ public class AlwaysOnTop : MonoBehaviour
 
     #endregion
 
-    public static string CONSTANT_WINDOW_TITLE_FROM_GAME = "Elden Ring Key Item Tracker";
+    public string CONSTANT_WINDOW_TITLE_FROM_GAME;
     public Toggle toggle;
 
     public void ToggleAOT()

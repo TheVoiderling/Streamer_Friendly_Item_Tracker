@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InitialLoad : MonoBehaviour
 {
     [SerializeField] private Toggle _runeDisplay, _keyDisplay, _medalionDisplay, _itemDisplay, _multiDisplay, _aot, _allText, _runeText, _noText;
+    [SerializeField] private bool _checkRunes, _checkKey, _checkMedalion, _checkItem, _checkMulti;
     public static InitialLoad instance;
 
     public const string RUNE_TAG = "runeDisplay";
@@ -32,11 +33,16 @@ public class InitialLoad : MonoBehaviour
 
     public void LoadSettings()
     {
-        SetToggle(_runeDisplay, PlayerPrefs.GetInt(RUNE_TAG, 1));
-        SetToggle(_keyDisplay, PlayerPrefs.GetInt(KEY_TAG, 1));
-        SetToggle(_medalionDisplay, PlayerPrefs.GetInt(MEDALION_TAG, 1));
-        SetToggle(_itemDisplay, PlayerPrefs.GetInt(ITEM_TAG, 1));
-        SetToggle(_multiDisplay, PlayerPrefs.GetInt(MULTI_TAG, 1));
+        if(_checkRunes)
+            SetToggle(_runeDisplay, PlayerPrefs.GetInt(RUNE_TAG, 1));
+        if(_checkKey)
+            SetToggle(_keyDisplay, PlayerPrefs.GetInt(KEY_TAG, 1));
+        if(_checkMedalion)
+            SetToggle(_medalionDisplay, PlayerPrefs.GetInt(MEDALION_TAG, 1));
+        if(_checkItem)
+            SetToggle(_itemDisplay, PlayerPrefs.GetInt(ITEM_TAG, 1));
+        if(_checkMulti)
+            SetToggle(_multiDisplay, PlayerPrefs.GetInt(MULTI_TAG, 1));
         SetToggleGroup(PlayerPrefs.GetInt(TEXT_TAG, 0));
         StartCoroutine("DelayedStart");
     }
